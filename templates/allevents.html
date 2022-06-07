@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<style>
+
+
+    *{
+     margin: 0px;
+     padding: 0px;
+    }
+    body{
+     font-family: gothic;
+    }
+    .main{
+    
+     margin: 2%;
+    }
+    
+    .card{
+         width: 20%;
+         display: inline-block;
+         box-shadow: 2px 2px 10px black;
+         border-radius: 5px; 
+         margin: 2%;
+        }
+    
+    .image img{
+      width: 100%;
+      border-top-right-radius: 5px;
+      border-top-left-radius: 5px;
+      
+    
+     
+     }
+    
+    .title{
+     
+      text-align: center;
+      padding: 10px;
+      
+     }
+    
+    h1{
+      font-size
+    }
+    </style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Events</h2>
+            
+            <div class="row">
+            {% for item in events %}
+            <div class="card">
+
+                <div class="image">
+                   <img src="{{item.image.url}}">
+                </div>
+                <div class="title">
+                 <h2>{{item.eventname}}</h2>
+                </div>
+                <hr>
+                <div class="title1" style="text-align:center">
+                    <h3>{{item.collegename}}</h3>
+                </div>
+                <div class="desc" style="text-align:center">
+                 <h5><p>{{item.desc}}</p></h5>
+                </div>
+                <div class="title3" style="text-align:center">
+                    {{item.date}}
+                </div>
+                </div>
+            {%endfor%}
+            </div>        
+        </div>
+    </div>
+</div
+
+
+{%endblock body%}
+

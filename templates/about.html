@@ -1,0 +1,43 @@
+ {% extends 'base.html' %}
+ {% block head %}
+ <style>
+      
+      html {
+        box-sizing: border-box;
+        
+      }
+      
+      *, *:before, *:after {
+        box-sizing: inherit;
+      }
+      
+      .column {
+        float: left;
+        width: 33.3%;
+        margin-bottom: 16px;
+        padding: 0 8px;
+      }
+      
+      .about-section {
+        padding: 50px;
+        text-align: center;
+        
+        color: black;
+      }
+      
+ </style>
+ {% endblock head %}
+{% block title %}About{% endblock title %}
+
+{% block body %}
+<img src="\static\Coep.png"width="100%" 
+height="400">
+<div class="about-section">
+    <h1>About Us..</h1>
+    
+    <p>  This is an initiative by College of Engineering ,Pune to connect all the alumnis passing out from Universities and other aided colleges also description of all events happening in colleges can easily be circulated.Colleges greatly benefit from this network as it makes connecting  easier. Smooth flow of information between college alumnis and students is the utmost priority.</p>
+    
+  </div>
+  
+  
+{% endblock body %} 

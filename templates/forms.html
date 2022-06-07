@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}Forms{% endblock title %}
+
+{% block body %}
+<div class="card-deck">
+    <div class="card text-center">
+      <img src="/static/formprofile.jpg" class="card-img-top" alt="..." height="350">
+      <div class="card-body">
+        <h5 class="card-title">Add Profile</h5>
+        <p class="card-text">Fill personal details..</p>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" onclick="window.location.href='/profile'">Add Profile</button>
+      </div>
+    </div>
+    <div class="card text-center">
+      <img src="/static/formevents.jpg" class="card-img-top" alt="..." height="350">
+      <div class="card-body">
+        <h5 class="card-title">Add Events</h5>
+        <p class="card-text">Add Events description..</p>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary" onclick="window.location.href='/events'">Add Event</button>
+      </div>
+    </div>
+    <div class="card text-center">
+      <img src="/static/formscolleges.jpg" class="card-img-top" alt="..." height="350">
+      <div class="card-body">
+        <h5 class="card-title">Add Colleges</h5>
+        <p class="card-text">Add College description..</p>
+      </div>
+      <div class="card-footer">
+        <button type="button" class="btn btn-primary">Add College</button>
+      </div>
+    </div>
+  </div>
+{% endblock body %}
