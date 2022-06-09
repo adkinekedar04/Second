@@ -26,15 +26,10 @@
       <li class="nav-item active">
         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
       </li>
-      {% if user.is_authenticated %}
       <li class="nav-item">
         <a class="nav-link" href="/logout">Logout</a>
       </li>
-      {% else %}
-      <li class="nav-item">
-        <a class="nav-link" href="/login">Login</a>
-      </li>
-      {% endif %}
+      
       
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -45,6 +40,7 @@
 
           <a class="dropdown-item" href="/allevents">Search Events</a>
           
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/contact">Contact Us</a>
@@ -57,6 +53,7 @@
   </div>
 </nav>
  
+
 {% if messages %}
 {% for message in messages %}
 <div class="alert alert-{{ message.tags }} alert-dismissible fade show my-0" role="alert">
@@ -68,7 +65,7 @@
  {% endfor %}
 {% endif %}
 
-{% block body %} {% endblock body %}
+{% block body %} 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -79,22 +76,25 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
+  
 </html>
+{% endblock body %}
+
 
 <body class="d-flex flex-column">
-  <div id="page-content">
-    <div class="container text-center">
-      <div class="row justify-content-center">
-        <div class="col-md-7">
-          <h1 class="fw-light mt-4 text-white">Sticky Footer using Flexbox</h1>
-          <p class="lead text-white-50">Use just two Bootstrap utility classes and three custom CSS rules and you will have a flexbox enabled sticky footer for your website!</p>
+    <div id="page-content">
+      <div class="container text-center">
+        <div class="row justify-content-center">
+          <div class="col-md-7">
+            <h1 class="fw-light mt-4 text-white">Sticky Footer using Flexbox</h1>
+            <p class="lead text-white-50">Use just two Bootstrap utility classes and three custom CSS rules and you will have a flexbox enabled sticky footer for your website!</p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
-    <div class="container text-center" style="font-family : Trebuchet MS">
-      <medium>&copy; designed & developed by <b>Gourav Bangad</b> & <b>Kedar Adkine</b> &#128515;</medium>
-    </div>
-  </footer>
-</body>
+    <footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+      <div class="container text-center" style="font-family : Trebuchet MS">
+        <medium>&copy; designed & developed by <b>Gourav Bangad</b> & <b>Kedar Adkine</b> &#128515;</medium>
+      </div>
+    </footer>
+  </body>

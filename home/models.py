@@ -34,3 +34,14 @@ class Event(models.Model):
     image = models.ImageField(upload_to ="home/images" ,default ="")
     def __str__(self):
         return self.collegename
+
+class Profile(models.Model):
+    profilename = models.CharField(max_length=122,default ="")
+    profileemail = models.CharField(max_length=122,default ="")
+    profilenumber = models.CharField(max_length=122,default="")
+    profilecollege = models.CharField(max_length=122,default ="")
+    branch = models.CharField(max_length=122,default ="")
+    profiledesc = models.TextField()
+    profileimage = models.ImageField(upload_to ="home/profile/images" ,default ="")
+    def __str__(self):
+        return self.profilename
