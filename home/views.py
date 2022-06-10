@@ -2,8 +2,8 @@ from multiprocessing import context
 from django.shortcuts import redirect, render, HttpResponse
 
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login,logout
+from django.contrib.auth.models import User,auth
+from django.contrib.auth import authenticate
 from django.http import HttpResponse
 from datetime import datetime
 
@@ -11,6 +11,10 @@ from numpy import imag
 from home.models import Contact ,Event, Profile
 from home.models import Register
 from django.contrib import messages
+from django.contrib.auth import logout
+from django.contrib.auth import login
+
+
 
 from .models import *
 
@@ -85,14 +89,15 @@ def login(request):
     if request.method == "POST":
         loginemail = request.POST['loginemail']
         loginpassword = request.POST['loginpassword']
-        print(loginemail)
-        print(loginpassword) 
+        #print(loginemail)
+        #print(loginpassword) 
         user = authenticate(username = loginemail,password = loginpassword)
-        print(user)
+        #print(user)
         if user is not None:
             #print(2)
             messages.info(request,'Succesfully logged in')
-           # login(request,user)
+             
+            auth.login(request,user)
             return redirect ('/forms')
         else:
            # print(1)
@@ -100,7 +105,13 @@ def login(request):
             return redirect('/login')
     else:
         return render(request,'login.html')
-   # return render(request, 'login.html')
+
+
+
+def logout(request):
+    auth.logout(request)
+    return redirect("/")
+
 
 def contact(request):
     print(request.method)

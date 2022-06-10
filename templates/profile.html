@@ -1,4 +1,4 @@
-{% extends 'header.html' %}
+{% extends 'base.html' %}
 
 {% block title %}Login{% endblock title %}
 
@@ -20,13 +20,17 @@
                             <input type="text" class="form-control" id="name" name="profilename">
                         </div>
                         <div class="form-group">
+                          <label for="name">College</label>
+                          <input type="text" class="form-control" id="name" name="profilecollege">
+                      </div>
+                        <div class="form-group">
                             <label for="email">Email address</label>
                             <input type="text" class="form-control" id="email" name="profileemail">
                         </div>
                         
                         <div class="form-group">
                             <label for="number">Contact Number</label>
-                            <input type="number" class="form-control" id="number" name="profilenumber">
+                            <input type="text" class="form-control" id="number" name="profilenumber">
                         </div>
                         
                         <div class="form-group">
@@ -34,13 +38,10 @@
                             <input type="text" class="form-control" id="name" name="branch">
                         </div>
 
-                        <div class="form-group">
-                          <label for="name">College</label>
-                          <input type="text" class="form-control" id="name" name="profilecollege">
-                      </div>
+                        
 
                         <div class="form-group">
-                            <label for="desc">Description...</label>
+                            <label for="desc">Portfolio</label>
                             <textarea class="form-control" id="desc" rows="3" name="profiledesc"></textarea>
                         </div>
 
