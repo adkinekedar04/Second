@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block body %}
 {% block head %}
+
  <style>
    
 
@@ -56,15 +57,18 @@
        }
 
        .container{
-         box-shadow:2px 2px 5px;
+         margin=200px;
+         box-shadow:2px ;
+         position:center;
        }
 
        
  </style>
 {% endblock head %}
 
+<br>
+ 
 <div class="container">
-
   <div class="row height d-flex justify-content-center align-items-center">
 
     <div class="col-md-8">
@@ -74,7 +78,7 @@
 
       <div class="search">
         <i class="fa fa-search"></i>
-        <input type="text" class="form-control" placeholder="Search by College.." name = "clgname" >
+        <input type="text" class="form-control" placeholder=" Search by branch" name = "branchname" >
         <br>
         <button class="btn btn-primary" type="submit">Search</button>
       </div>
@@ -82,10 +86,7 @@
     </div>
     
   </div>
-</div>
-<br>
-<div class="container">
-  <h1 style="text-align :center;font-family:Georgia">Alumnus</h1>
+  <h1 style="text-align :center;font-family:Georgia">COEP Alumnus</h1>
   <br>
   <div class="row">
       <div class="h-25 d-inline-block">
@@ -95,21 +96,19 @@
               {%for item in profiles%}
 
 
-              <div class="card mb-3" style="max-width: 100%;font-family : Trebuchet MS">
+              <div class="card mb-3" style="max-width: 100%;font-family : Trebuchet MS;position:center">
                   <div class="row g-0" style="width:100%">
                       <div class="col-md-4">
-                          <img src="{{item.profileimage.url}}" class="rounded-start"  style="width: 100%;height: 100%">
+                          <img src="{{item.profileimage.url}}" class="rounded-start"  style="width: 100%;height: 100%;box-shadow:2px 2px 5px;">
                       </div>
-                      <div class="col-md-8">
-                          <div class="card-body">
-                              <h3 class="card-title">{{item.profilename}}</h3>
+                      <div class="col-md-8" style="position:center;">
+                          <div class="card-body" >
+                              <h3 class="card-title" style="color:grey;">{{item.profilename}}</h3>
                               <hr>
-                              <p class="card-text">
-                              <h4>{{item.profilecollege}}</h4>
-                              </p>
+                              
                               <p class="card-text" style="font-weight:500"><b>Branch : </b>{{item.branch}}</p>
                               <p class="card-text" style="font-weight:500"><b>Email : </b>{{item.profileemail}}</p>
-                              <p class="card-text" style="font-weight:500"><b>Contact : </b>+91 {{item.profilenumber}}</p>
+                              <p class="card-text" style="font-weight:500"><b>Contact : </b>{{item.profilenumber}}</p>
                               <p class="card-text" style="font-weight:500"><b>Description :</b> <br>{{item.profiledesc}}</p>
                           </div>
                       </div>

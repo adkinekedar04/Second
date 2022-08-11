@@ -55,37 +55,16 @@
 
        }
 
-       .container{
-         box-shadow:2px 2px 5px;
-       }
+       
 
        
  </style>
+ 
 {% endblock head %}
-
-<div class="container">
-
-  <div class="row height d-flex justify-content-center align-items-center">
-
-    <div class="col-md-8">
-    {% csrf_token %}
-    <form method="POST">
-      {% csrf_token %}
-
-      <div class="search">
-        <i class="fa fa-search"></i>
-        <input type="text" class="form-control" placeholder="Search by College.." name = "clgname" >
-        <br>
-        <button class="btn btn-primary" type="submit">Search</button>
-      </div>
-    </form>
-    </div>
-    
-  </div>
-</div>
 <br>
+
 <div class="container">
-  <h1 style="text-align :center;font-family:Georgia">Events</h1>
+  <h1 style="text-align :center;font-family:Georgia">Events in COEP</h1>
   <br>
   <div class="row">
       <div class="h-25 d-inline-block">
@@ -94,21 +73,25 @@
 
               {%for item in events%}
 
-
-              <div class="card mb-3" style="max-width: 100%;font-family : Trebuchet MS">
+              
+              <div class="card mb-4" style="max-width: 100%;font-family : Trebuchet MS">
                   <div class="row g-0" style="width:100%">
                       <div class="col-md-4">
-                          <img src="{{item.image.url}}" class="rounded-start"  style="width: 100%;height: 100%">
+                          <img src="{{item.image.url}}" class="rounded-start"  style="width: 100%;height: 100%;box-shadow:2px 2px 5px;">
                       </div>
                       <div class="col-md-8">
                           <div class="card-body">
-                              <h3 class="card-title">{{item.eventname}}</h3>
+                                <h3 class="card-title" style="color:grey;">{{item.eventname}}</h3>
+                              
                               <hr>
-                              <p class="card-text">
-                              <h4>{{item.collegename}}</h4>
-                              </p>
+                              
                               <p class="card-text" style="font-weight:500">{{item.desc}}</p>
                               <p class="card-text"><medium class="text-muted">{{item.date}}</medium></p>
+                              <form action="{% url 'eventlogin' %}" method="">
+                                {%csrf_token%}
+                                <input type="hidden" name="eventname1"  value="{{item.eventname}}"/>
+                                <button href="/eventlogin" class="btn btn-primary" method="submit">Register</button>
+                            </form>
                           </div>
                       </div>
                   </div>

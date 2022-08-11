@@ -3,38 +3,36 @@
 {% block title %}Events{% endblock title %}
 
 {% block body %}
+<br>
     <div class="container h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-12 col-xl-11">
-          <div class="card text-black" style="border-radius: 25px;">
+          <div class="card text-black" style="border-radius: 25px;background-color: #eee; ">
             <div class="card-body p-md-5">
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
   
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Enter Event Details..</p>
-  
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Enter Event Details</p>
+                  
                   <form method="POST" action="/events" novalidate enctype="multipart/form-data">
                     {% csrf_token %}
                         <div class="form-group">
-                            <label for="name">Enter College Name</label>
-                            <input type="text" class="form-control" id="name" name="collegename">
+                            <label for="name">Club Name</label>
+                            <input type="text" class="form-control" id="name" name="clubname">
                         </div>
                         <div class="form-group">
-                            <label for="name">Enter Event Name</label>
+                            <label for="name">Event Name</label>
                             <input type="text" class="form-control" id="name" name="eventname">
                         </div>
-                        <!-- <div class="form-group">
-                            <label for="email">Email address</label>
-                            <input type="text" class="form-control" id="email" name="email" placeholder="Enter Your Email">
-                        </div> -->
+                        
 
                         <div class="form-group">
-                            <label for="name">Enter Date</label>
+                            <label for="name">Date</label>
                             <input type="date" class="form-control" id="name" name="date">
                         </div>      
                         
                         <div class="form-group">
-                            <label for="desc">Description...</label>
+                            <label for="desc">Description </label>
                             <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
                         </div>
 
@@ -43,14 +41,7 @@
                           <input type="file" class="form-control" id="customFile" name="image"/>
                       </div>
                         
-                        <!-- <div class="form-group">
-                            <label for="password">Password</label>
-                            <input type="password" class="form-control" id="password" name="password" >
-                        </div>      
-                        <div class="form-group">
-                          <label for="password">Confirm Password</label>
-                          <input type="password" class="form-control" id="password" name="password2" >
-                        </div> -->
+                       
                        
                         <button class="btn btn-primary" type="submit">Submit</button>
                     </form>

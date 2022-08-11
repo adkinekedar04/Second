@@ -4,8 +4,9 @@
 {% block title %}Login{% endblock title %}
 
 {% block body %}
-<section class="vh-100" style="background-color: #eee;">
-    <div class="container h-100">
+<section class="vh-100" >
+  <br>
+    <div class="container h-100" style="background-color: #eee;border-radius: 25px;">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col-lg-12 col-xl-11">
           <div class="card text-black" style="border-radius: 25px;">
@@ -13,29 +14,37 @@
               <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
   
-                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Login</p>
+                  <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Sign in</p>
   
                   <form class="mx-1 mx-md-4" method="post" action="/login" novalidate>
                   {% csrf_token %}
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <input type="email" id="form3Example3c" class="form-control" name="loginemail" required />
-                        <label class="form-label" for="form3Example3c">Your Email</label>
+                  <div class="form-group">
+                    <div class="input-group">
+                          <div class="input-group-prepend">
+                              <span class="input-group-text">
+                                  <span class="bi bi-envelope-fill fa-lg"></span>
+                              </span>                    
+                          </div>
+                          <input type="text" class="form-control" placeholder="Username" name="loginemail" required="required">
                       </div>
+                  </div>
+  <br>
+                  <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">
+                                <i class="bi bi-key-fill fa-lg"></i>
+                            </span>                    
+                        </div>
+                        <input type="password" class="form-control" placeholder="Password" name="loginpassword" required="required">
                     </div>
-  
-                    <div class="d-flex flex-row align-items-center mb-4">
-                      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-                      <div class="form-outline flex-fill mb-0">
-                        <input type="password" id="form3Example4c" class="form-control" name="loginpassword" required/>
-                        <label class="form-label" for="form3Example4c">Password</label>
-                      </div>
-                    </div>
+                </div> 
  
                     <div class="pt-1 mb-4">
                         <button class="btn btn-info btn-lg btn-block" type="submit">Login</button>
                     </div>
+                      
+                  <hr>
                     <p>Don't have an account? <a href="/register" class="link-info">Register here</a></p>
   
                   </form>
@@ -44,7 +53,7 @@
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
   
                   <img src="/static/Login.jpg"
-                    class="img-fluid" alt="Sample image">
+                    class="img-fluid" alt="Sample image" style="border-radius: 15px;">
   
                 </div>
               </div>

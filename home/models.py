@@ -27,21 +27,30 @@ class Register(models.Model):
         return self.name
 
 class Event(models.Model):
-    collegename = models.CharField(max_length=122,default ="")
+    clubname = models.CharField(max_length=122,default ="")
     eventname = models.CharField(max_length=122,default ="")
     date = models.DateField()
     desc = models.TextField()
     image = models.ImageField(upload_to ="home/images" ,default ="")
     def __str__(self):
-        return self.collegename
+        return self.eventname
 
 class Profile(models.Model):
     profilename = models.CharField(max_length=122,default ="")
     profileemail = models.CharField(max_length=122,default ="")
     profilenumber = models.CharField(max_length=122,default="")
-    profilecollege = models.CharField(max_length=122,default ="")
     branch = models.CharField(max_length=122,default ="")
     profiledesc = models.TextField()
     profileimage = models.ImageField(upload_to ="home/profile/images" ,default ="")
     def __str__(self):
         return self.profilename
+
+class Eventlogin(models.Model):
+    studentname = models.CharField(max_length=122,default ="")
+    collegeemail = models.CharField(max_length=122,default ="")
+    mis = models.CharField(max_length=12,default="")
+    branch = models.CharField(max_length=122,default ="")
+    mobile = models.CharField(max_length=10,default ="")
+    eventreg = models.CharField(max_length=122,default ="")
+    def __str__(self):
+        return self.mis

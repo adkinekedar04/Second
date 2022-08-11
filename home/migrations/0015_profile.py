@@ -17,7 +17,6 @@ class Migration(migrations.Migration):
                 ('profilename', models.CharField(default='', max_length=122)),
                 ('profileemail', models.CharField(default='', max_length=122)),
                 ('profilenumber', models.CharField(default='', max_length=122)),
-                ('profilecollege', models.CharField(default='', max_length=122)),
                 ('branch', models.CharField(default='', max_length=122)),
                 ('profiledesc', models.TextField()),
                 ('profileimage', models.ImageField(default='', upload_to='home/profile/images')),

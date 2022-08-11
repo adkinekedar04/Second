@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% block body %}
+{% block head %}
+
+ <style>
+   
+
+       .height{
+        height: 20vh;
+       }
+       
+
+       .search{
+       position: relative;
+         
+       }
+
+       .search input{
+
+        height: 60px;
+        text-indent: 25px;
+        border: 2px solid #d6d4d4;
+        background-color:#eee;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+
+
+       }
+
+
+       .search input:focus{
+
+        box-shadow: none;
+        border: 2px solid blue;
+
+
+       }
+
+       .search .fa-search{
+
+        position: absolute;
+        top: 20px;
+        left: 16px;
+
+       }
+
+       .search button{
+
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        height: 50px;
+        width: 110px;
+        background: blue;
+
+
+       }
+
+       .container{
+         margin=200px;
+         box-shadow:2px ;
+         position:center;
+       }
+       .card-body {
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        min-height: 1px;
+        padding: 3.25rem;
+      }
+
+       
+ </style>
+{% endblock head %}
+
+<br>
+ 
+<div class="container">
+  <div class="row height d-flex justify-content-center align-items-center">
+
+    <div class="col-md-8">
+    {% csrf_token %}
+    <form method="POST">
+      {% csrf_token %}
+
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input type="text" class="form-control" placeholder=" Search by event" name = "eventname" >
+        <br>
+        <button class="btn btn-primary" type="submit">Search</button>
+      </div>
+    </form>
+    </div>
+    
+  </div>
+  <h1 style="text-align :center;font-family:Georgia">All registrations</h1>
+  <br>
+  <div class="row">
+      <div class="h-25 d-inline-block">
+
+          <div class="row">
+
+              {%for item in eventlogins%}
+
+
+              <div class="card mb-3" style="max-width: 100%;font-family : Trebuchet MS;position:center;box-shadow: 1px 1px;align:center;">
+                  <div class="row g-0" style="width:100%;align:center;">
+                      
+                      <div class="md-8" style="position:center;">
+                          <div class="card-body" >
+                            <h3 class="card-title" style="color:grey;text-align:center;">{{item.mis}}</h3>
+
+                              <h3 class="card-title" style="color:grey;text-align:center;">{{item.studentname}}</h3>
+                              <hr style="width:300px; " >
+                              
+                              <p class="card-text" style="font-weight:500;text-align:center;"><b>Branch : </b>{{item.branch}}</p>
+                              <p class="card-text" style="font-weight:500;text-align:center;"><b>Email : </b>{{item.collegeemail}}</p>
+                              <p class="card-text" style="font-weight:500;text-align:center;"><b>Contact : </b>{{item.mobile}}</p>
+                              <p class="card-text" style="font-weight:500;text-align:center;"><b>Registered for event :</b> {{item.eventreg}}</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              {% endfor %}
+
+
+          </div>
+      </div>
+  </div>
+</div>
+    
+
+{%endblock body%}
+
